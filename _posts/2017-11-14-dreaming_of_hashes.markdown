@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "{Dreaming of Hashes}"
-date:       2017-11-14 07:40:07 +0000
+date:       2017-11-14 02:40:07 -0500
 permalink:  dreaming_of_hashes
 ---
 
@@ -44,6 +44,7 @@ pizza = {
 topping_1: "cheese",
 topping_2: "meat"
 }
+
 *#=> {:topping1=>"cheese", :topping2=>"meat"}*
 
 
