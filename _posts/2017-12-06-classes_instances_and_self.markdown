@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Classes, Instances and Self"
-date:       2017-12-07 00:54:42 +0000
+date:       2017-12-06 19:54:43 -0500
 permalink:  classes_instances_and_self
 ---
 
@@ -137,9 +137,9 @@ Perfect!
 Now, I'd like to get into one more thung: SELF. 
 
 **What's self?**
-- inside of an instance method it references the instance that called the method. Therefore, self.age= is the same as duck1.weight=.
+- inside of an instance method it references the instance that called the method. Therefore, self.age= is the same as duck1.age=.
 - outside of an instance method it references the class . It can be used to define class methods. 
-def self.age=(age) is the same as def GoodDog.age=(age).
+def self.age=(age) is the same as def MyDucks.age=(age).
 
 We could add a method called self to see what self is like this:
 
