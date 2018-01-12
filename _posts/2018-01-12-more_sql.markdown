@@ -1,0 +1,84 @@
+---
+layout: post
+title:      "More SQL ..."
+date:       2018-01-12 23:14:26 +0000
+permalink:  more_sql
+---
+
+I found a few more SQL statements and operators that can be useful.
+
+
+**SELECT	DISTINCT **
+ 
+This is used if you	want	to	list	only	the	different	(distinct)	values	in	a	table. 
+
+For example: 
+SELECT DISTINCT LastName 
+FROM Customers
+
+This will	return	only	distinct	last names from the Customers' database.
+
+
+**LIKE**
+It is	used	to	search	for	a	specified	pattern	in	a	column. 
+
+'%' and '_' can be used with LIKE as a wildcard. 
+'%' is	substitute	for	zero	or	more	characters
+'_' is substitute	for	exactly	one	character*
+
+For example:
+SELECT LastName
+FROM Customers
+WHERE Last_Name LIKE 'a%'
+
+This will	return	last names from the Customers' database that start with a.
+
+Other ways to use the wildcard:
+Return values ending with a certain character: '%a'
+Return values that have a certain character chain: '%and%'
+Return values that have a certain character in the second position:  '_a%'
+Return values that starts with be and has at least 2 more folowing characters: 'be_ _%' (such as Berlin or Bern)
+Return values that starts and ends with a certain character:  'k%n' (such as Koppenhagen)
+
+**ANY**
+The ANY operator returns true if any of the values meet the condition.
+
+SELECT LastName 
+FROM Customers
+WHERE CustomerID = ANY (SELECT CustomerID FROM Addresses WHERE ZipCode = 87654);
+
+This statement returns the last names if it finds *any* records in the Address  table where  the zipcode is 87654.
+
+**ALL**
+This only returns true if all of the values meet the condition.
+
+SELECT LastName 
+FROM Customers
+WHERE CustomerID = ANY (SELECT CustomerID FROM Addresses WHERE ZipCode = 87654);
+
+This only returns true if all of the values meet the condition.
+
+This SQL statement  lists the last names if *all* the records in the Addresses table has the  certain ZipCode.
+
+**UNION**
+This is simlar to join, but the UNION operator selects only distinct values by default. 
+
+SELECT LastName FROM Customers
+UNION
+SELECT LastName FROM Suppliers
+ORDER BY LastName;
+
+This would return all the distinct last names within the two databases. 
+
+
+
+
+
+
+
+
+
+
+
+
+
