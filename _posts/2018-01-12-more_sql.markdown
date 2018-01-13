@@ -8,7 +8,7 @@ permalink:  more_sql
 I found a few more SQL statements and operators that can be useful.
 
 
-**SELECT	DISTINCT **
+**SELECT** **DISTINCT**
  
 This is used if you	want	to	list	only	the	different	(distinct)	values	in	a	table. 
 
